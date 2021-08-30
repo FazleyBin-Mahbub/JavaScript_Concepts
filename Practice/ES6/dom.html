@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="whole-page">
+      <div class="friend">
+        <h3 class="friend-name">Friend-1</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+      <div class="friend">
+        <h3 class="friend-name">Friend-2</h3>
+        <p>Minima sequi facilis repudiandae deserunt.</p>
+      </div>
+      <div class="friend">
+        <h3 class="friend-name">Friend-3</h3>
+        <p>Quia incidunt consequatur impedit saepe.</p>
+      </div>
+      <div class="friend">
+        <h3 class="friend-name" id="friend-name">Friend-4</h3>
+        <p>Error, dolores consequatur. Culpa, ut.</p>
+      </div>
+    </div>
+    <div>
+      <h2>Control Room</h2>
+      <button id="add-border">Add Border</button>
+      <button>Add Background</button>
+      <button id="add-frnd">Add Friend</button>
+      <button id="change-friend-name">Change Friend Name</button>
+      <button>Others</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("add-border")
+        .addEventListener("click", function () {
+          const wholePage = document.getElementById("whole-page");
+          console.log(wholePage);
+          wholePage.style.border = "5px solid red";
+          wholePage.style.padding = "10px";
+        });
+      document
+        .getElementById("add-frnd")
+        .addEventListener("click", function () {
+          const page = document.getElementById("whole-page");
+          const friendTitle = document.createElement("div");
+          friendTitle.classList.add("friend");
+          friendTitle.innerHTML = `
+          <h3 class="friend-name">Friend-5</h3>
+        <p>Quia incidunt consequatur impedit saepe.</p>
+          `;
+          page.appendChild(friendTitle);
+        });
+
+      document
+        .getElementById("change-friend-name")
+        .addEventListener("click", function () {
+          const friendName = document.getElementById("friend-name");
+
+          friendName.innerText = "Hayder Mahmud";
+        });
+    </script>
+  </body>
+</html>
