@@ -8,7 +8,7 @@ Data types
 . undefined
 . null
 . symbol
-
+-----------------
  2. non-primitive
  . object
 */
